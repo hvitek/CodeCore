@@ -28,3 +28,4 @@ hs_err_pid*
 .settings/org.eclipse.jpt.core.prefs
 .settings/org.eclipse.jdt.core.prefs
 .settings/org.eclipse.wst.common.project.facet.core.xml
+.settings/org.eclipse.jpt.entitygen.new-postgresql.public
