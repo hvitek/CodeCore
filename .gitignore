@@ -24,3 +24,7 @@ hs_err_pid*
 .project
 .gitignore
 .classpath
+.settings/org.eclipse.wst.common.project.facet.core.prefs.xml
+.settings/org.eclipse.jpt.core.prefs
+.settings/org.eclipse.jdt.core.prefs
+.settings/org.eclipse.wst.common.project.facet.core.xml
