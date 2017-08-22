@@ -10,7 +10,7 @@ import javax.persistence.Persistence;
 
 public class ConnectionBuilder{
 	
-	public EntityManager getConn()
+	public static EntityManager getConn()
 	{
 		EntityManagerFactory emfactory = Persistence.
 				createEntityManagerFactory( "CodeCore" );

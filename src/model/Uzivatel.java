@@ -10,7 +10,7 @@ import javax.persistence.*;
  */
 @Entity
 @NamedQuery(name="Uzivatel.findAll", query="SELECT u FROM Uzivatel u")
-public class tblUzivatel implements Serializable {
+public class Uzivatel implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -23,9 +23,9 @@ public class tblUzivatel implements Serializable {
 	//bi-directional many-to-one association to Skupinaprav
 	@ManyToOne
 	@JoinColumn(name="fk_skupinaprav")
-	private tblSkupinaPrav skupinaprav;
+	private Skupinaprav skupinaprav;
 
-	public tblUzivatel() {
+	public Uzivatel() {
 	}
 
 	public Integer getId() {
@@ -52,11 +52,11 @@ public class tblUzivatel implements Serializable {
 		this.prijmeni = prijmeni;
 	}
 
-	public tblSkupinaPrav getSkupinaprav() {
+	public Skupinaprav getSkupinaprav() {
 		return this.skupinaprav;
 	}
 
-	public void setSkupinaprav(tblSkupinaPrav skupinaprav) {
+	public void setSkupinaprav(Skupinaprav skupinaprav) {
 		this.skupinaprav = skupinaprav;
 	}
 

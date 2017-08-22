@@ -4,7 +4,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Shell;
 
-public abstract class MainWindowDesigner{
+public abstract class MainWindowDesigner extends MainWindow{
 
 	protected Shell shell;
 	protected Composite pnlBody;

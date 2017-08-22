@@ -11,7 +11,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import ftp.FtpConnect;
 
 public class ApplicationRunner {
-	private static ConnectionBuilder con = null;
+	private static TestRunner con = null;
 	
 	public static void main(String[] args) throws SocketException, IOException {
 		dbStart();	
@@ -22,7 +22,6 @@ public class ApplicationRunner {
 	{
 		//con = ConnectionBuilder.getJdbcTemplate();
 		
-		con = new ConnectionBuilder();
 		con.getConn().createNativeQuery("SELECT * FROM PRAVA");
 		System.out.println("DbTest");
 		System.out.println(con.toString());

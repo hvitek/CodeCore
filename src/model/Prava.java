@@ -11,7 +11,7 @@ import java.util.List;
  */
 @Entity
 @NamedQuery(name="Prava.findAll", query="SELECT p FROM Prava p")
-public class tblPrava implements Serializable {
+public class Prava implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -21,9 +21,9 @@ public class tblPrava implements Serializable {
 
 	//bi-directional many-to-one association to Pravaxskupinaprav
 	@OneToMany(mappedBy="prava")
-	private List<tblPravaXSkupinaPrav> pravaxskupinapravs;
+	private List<Pravaxskupinaprav> pravaxskupinapravs;
 
-	public tblPrava() {
+	public Prava() {
 	}
 
 	public Integer getId() {
@@ -39,26 +39,25 @@ public class tblPrava implements Serializable {
 	}
 
 	public void setNazev(String nazev) {
-		
 		this.nazev = nazev;
 	}
 
-	public List<tblPravaXSkupinaPrav> getPravaxskupinapravs() {
+	public List<Pravaxskupinaprav> getPravaxskupinapravs() {
 		return this.pravaxskupinapravs;
 	}
 
-	public void setPravaxskupinapravs(List<tblPravaXSkupinaPrav> pravaxskupinapravs) {
+	public void setPravaxskupinapravs(List<Pravaxskupinaprav> pravaxskupinapravs) {
 		this.pravaxskupinapravs = pravaxskupinapravs;
 	}
 
-	public tblPravaXSkupinaPrav addPravaxskupinaprav(tblPravaXSkupinaPrav pravaxskupinaprav) {
+	public Pravaxskupinaprav addPravaxskupinaprav(Pravaxskupinaprav pravaxskupinaprav) {
 		getPravaxskupinapravs().add(pravaxskupinaprav);
 		pravaxskupinaprav.setPrava(this);
 
 		return pravaxskupinaprav;
 	}
 
-	public tblPravaXSkupinaPrav removePravaxskupinaprav(tblPravaXSkupinaPrav pravaxskupinaprav) {
+	public Pravaxskupinaprav removePravaxskupinaprav(Pravaxskupinaprav pravaxskupinaprav) {
 		getPravaxskupinapravs().remove(pravaxskupinaprav);
 		pravaxskupinaprav.setPrava(null);
 
