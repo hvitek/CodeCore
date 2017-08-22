@@ -3,7 +3,7 @@
 	<persistence-unit name="CodeCore" transaction-type="RESOURCE_LOCAL">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		<class>model.WordType</class>
-		<class>model.Prava</class>
+		<class>model.tblPrava</class>
 		<class>model.Pravaxskupinaprav</class>
 		<class>model.Uzivatel</class>
 		<class>model.Skupinaprav</class>
