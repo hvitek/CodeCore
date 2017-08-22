@@ -21,7 +21,7 @@ public class tblPrava implements Serializable {
 
 	//bi-directional many-to-one association to Pravaxskupinaprav
 	@OneToMany(mappedBy="prava")
-	private List<PravaXSkupinaPrav> pravaxskupinapravs;
+	private List<tblPravaXSkupinaPrav> pravaxskupinapravs;
 
 	public tblPrava() {
 	}
@@ -43,22 +43,22 @@ public class tblPrava implements Serializable {
 		this.nazev = nazev;
 	}
 
-	public List<PravaXSkupinaPrav> getPravaxskupinapravs() {
+	public List<tblPravaXSkupinaPrav> getPravaxskupinapravs() {
 		return this.pravaxskupinapravs;
 	}
 
-	public void setPravaxskupinapravs(List<PravaXSkupinaPrav> pravaxskupinapravs) {
+	public void setPravaxskupinapravs(List<tblPravaXSkupinaPrav> pravaxskupinapravs) {
 		this.pravaxskupinapravs = pravaxskupinapravs;
 	}
 
-	public PravaXSkupinaPrav addPravaxskupinaprav(PravaXSkupinaPrav pravaxskupinaprav) {
+	public tblPravaXSkupinaPrav addPravaxskupinaprav(tblPravaXSkupinaPrav pravaxskupinaprav) {
 		getPravaxskupinapravs().add(pravaxskupinaprav);
 		pravaxskupinaprav.setPrava(this);
 
 		return pravaxskupinaprav;
 	}
 
-	public PravaXSkupinaPrav removePravaxskupinaprav(PravaXSkupinaPrav pravaxskupinaprav) {
+	public tblPravaXSkupinaPrav removePravaxskupinaprav(tblPravaXSkupinaPrav pravaxskupinaprav) {
 		getPravaxskupinapravs().remove(pravaxskupinaprav);
 		pravaxskupinaprav.setPrava(null);
 

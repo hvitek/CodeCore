@@ -10,7 +10,7 @@ import javax.persistence.*;
  */
 @Entity
 @NamedQuery(name="Pravaxskupinaprav.findAll", query="SELECT p FROM Pravaxskupinaprav p")
-public class PravaXSkupinaPrav implements Serializable {
+public class tblPravaXSkupinaPrav implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -27,7 +27,7 @@ public class PravaXSkupinaPrav implements Serializable {
 	@JoinColumn(name="fk_skupinaprav")
 	private tblSkupinaPrav skupinaprav;
 
-	public PravaXSkupinaPrav() {
+	public tblPravaXSkupinaPrav() {
 	}
 
 	public Integer getId() {
