@@ -11,7 +11,7 @@ import java.util.List;
  */
 @Entity
 @NamedQuery(name="Prava.findAll", query="SELECT p FROM Prava p")
-public class Prava implements Serializable {
+public class tblPrava implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -23,7 +23,7 @@ public class Prava implements Serializable {
 	@OneToMany(mappedBy="prava")
 	private List<Pravaxskupinaprav> pravaxskupinapravs;
 
-	public Prava() {
+	public tblPrava() {
 	}
 
 	public Integer getId() {
@@ -39,6 +39,7 @@ public class Prava implements Serializable {
 	}
 
 	public void setNazev(String nazev) {
+		
 		this.nazev = nazev;
 	}
 
