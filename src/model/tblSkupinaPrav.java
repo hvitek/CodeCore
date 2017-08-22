@@ -11,21 +11,22 @@ import java.util.List;
  */
 @Entity
 @NamedQuery(name="Skupinaprav.findAll", query="SELECT s FROM Skupinaprav s")
-public class Skupinaprav implements Serializable {
+public class tblSkupinaPrav implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	
 	@Id
 	private Integer id;
 
 	//bi-directional many-to-one association to Pravaxskupinaprav
 	@OneToMany(mappedBy="skupinaprav")
-	private List<Pravaxskupinaprav> pravaxskupinapravs;
+	private List<PravaXSkupinaPrav> pravaxskupinapravs;
 
 	//bi-directional many-to-one association to Uzivatel
 	@OneToMany(mappedBy="skupinaprav")
-	private List<Uzivatel> uzivatels;
+	private List<tblUzivatel> uzivatels;
 
-	public Skupinaprav() {
+	public tblSkupinaPrav() {
 	}
 
 	public Integer getId() {
@@ -36,44 +37,44 @@ public class Skupinaprav implements Serializable {
 		this.id = id;
 	}
 
-	public List<Pravaxskupinaprav> getPravaxskupinapravs() {
+	public List<PravaXSkupinaPrav> getPravaxskupinapravs() {
 		return this.pravaxskupinapravs;
 	}
 
-	public void setPravaxskupinapravs(List<Pravaxskupinaprav> pravaxskupinapravs) {
+	public void setPravaxskupinapravs(List<PravaXSkupinaPrav> pravaxskupinapravs) {
 		this.pravaxskupinapravs = pravaxskupinapravs;
 	}
 
-	public Pravaxskupinaprav addPravaxskupinaprav(Pravaxskupinaprav pravaxskupinaprav) {
+	public PravaXSkupinaPrav addPravaxskupinaprav(PravaXSkupinaPrav pravaxskupinaprav) {
 		getPravaxskupinapravs().add(pravaxskupinaprav);
 		pravaxskupinaprav.setSkupinaprav(this);
 
 		return pravaxskupinaprav;
 	}
 
-	public Pravaxskupinaprav removePravaxskupinaprav(Pravaxskupinaprav pravaxskupinaprav) {
+	public PravaXSkupinaPrav removePravaxskupinaprav(PravaXSkupinaPrav pravaxskupinaprav) {
 		getPravaxskupinapravs().remove(pravaxskupinaprav);
 		pravaxskupinaprav.setSkupinaprav(null);
 
 		return pravaxskupinaprav;
 	}
 
-	public List<Uzivatel> getUzivatels() {
+	public List<tblUzivatel> getUzivatels() {
 		return this.uzivatels;
 	}
 
-	public void setUzivatels(List<Uzivatel> uzivatels) {
+	public void setUzivatels(List<tblUzivatel> uzivatels) {
 		this.uzivatels = uzivatels;
 	}
 
-	public Uzivatel addUzivatel(Uzivatel uzivatel) {
+	public tblUzivatel addUzivatel(tblUzivatel uzivatel) {
 		getUzivatels().add(uzivatel);
 		uzivatel.setSkupinaprav(this);
 
 		return uzivatel;
 	}
 
-	public Uzivatel removeUzivatel(Uzivatel uzivatel) {
+	public tblUzivatel removeUzivatel(tblUzivatel uzivatel) {
 		getUzivatels().remove(uzivatel);
 		uzivatel.setSkupinaprav(null);
 
