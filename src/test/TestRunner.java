@@ -2,35 +2,31 @@ package test;
 
 import java.util.List;
 
-import javax.persistence.EntityManager;
 import javax.persistence.Query;
-import javax.persistence.criteria.CriteriaBuilder;
+
 import application.ConnectionBuilder;
-import model.tblPrava;
+import model.Prava;
 
 public class TestRunner extends ConnectionBuilder {
 
-	EntityManager em = null;
-	CriteriaBuilder criteriaBuilder = null;
-	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Window window= new Window();
-		window.open();
+		System.out.println(listOfTables());
+		try {
+
+			PravaWindowMethodsContainer prava = new PravaWindowMethodsContainer(null);
+			//Prava prava = ConnectionBuilder.getConn().find(Prava.class, 1);
+			//System.out.println(prava.m_prava.getNazev());
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
-	
-	public List<String> listOfTables()
+	public static List<String> listOfTables()
 	{
-		Query sqlQuery = getConn().createNativeQuery("SELECT table_name FROM public.dbtables");
+		Query sqlQuery = getConn().createNativeQuery("SELECT table_name FROM information_schema.tables WHERE table_schema='public'");
 		List<String> values = sqlQuery.getResultList();
 		return values;
 	}
-	
-	public void test1(tblPrava pravaoOtevirana)
-	{
-		
-		 tblPrava prava = getConn().find(tblPrava.class, pravaoOtevirana.getId());
-		 String nazev = prava.getNazev();
-	}
-
 }

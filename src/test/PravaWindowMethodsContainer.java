@@ -1,14 +1,19 @@
 package test;
 
+import model.Prava;
+
 public class PravaWindowMethodsContainer extends PravaWindowDesigner {
 	
-	Prava m_prava;
+	Prava m_prava = null;
 	
-	public PravaWindowMethodsContainer (Prava entity) throws Exception{
+	public PravaWindowMethodsContainer (Prava prava) throws Exception{		
 		
-			
-		this.m_prava = entity;
+		PravaObject pravaObject = new PravaObject(prava);		
+		this.m_prava = pravaObject.getInstance();
 		this.updateData(false);
+		holdShell();
+		
+		
 	}
 
 
@@ -18,15 +23,16 @@ public class PravaWindowMethodsContainer extends PravaWindowDesigner {
 	 * @param save true ... Ulozit a zobrazit, false ... Zobrazit
 	 * @exception Exception
 	 */
-	@Override
 	public void updateData(boolean save) throws Exception
 	{
 		if (save){
 			// ulozime data
+			
 	    }
-		textZko.setText(m_prava.prava.getNazev());
-	
+		
 	    // zobrazime data
+		textZko.setText(m_prava.getNazev());
+		
 	}
 	   
 	   
@@ -34,7 +40,6 @@ public class PravaWindowMethodsContainer extends PravaWindowDesigner {
 	 * Povoluje / zakazuje ovladaci prvky
 	 * @exception Exception
 	 */
-	@Override
 	public void enableControls() throws Exception
 	{
 		// enable

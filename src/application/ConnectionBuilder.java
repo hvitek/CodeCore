@@ -8,7 +8,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 
-public class ConnectionBuilder{
+public  class ConnectionBuilder{
 	
 	public static EntityManager getConn()
 	{
