@@ -61,7 +61,7 @@ public abstract class PravaWindowDesigner {
 				}
 				{
 					
-					WorkflowComposite.addThreeLabels(new Composite(pnlContent, SWT.NONE),this.getClass().getSimpleName());
+					WorkflowComposite.loadStates(new Composite(pnlContent, SWT.NONE),this.getClass().getSimpleName());
 					
 				}
 			

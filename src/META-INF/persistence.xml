@@ -6,6 +6,7 @@
 		<class>model.Pravaxskupinaprav</class>
 		<class>model.Skupinaprav</class>
 		<class>model.Uzivatel</class>
+		<class>model.prava</class>
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<properties>
 			<property name="eclipselink.target-server" value="None"/>

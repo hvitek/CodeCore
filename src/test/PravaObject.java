@@ -18,7 +18,10 @@ public class PravaObject{
 	}
 	public void setInstance(int id)
 	{
+		//napln prava
 		this.prava = ConnectionBuilder.getConn().find(Prava.class, id);
+		//TODO
+		//nahraj workflow
 	}
 	public Prava getInstance(){return prava;}
 	
