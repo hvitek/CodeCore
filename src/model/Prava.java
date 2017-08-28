@@ -19,6 +19,11 @@ public class Prava implements Serializable {
 
 	private String nazev;
 
+	//bi-directional many-to-one association to Wf
+	@ManyToOne
+	@JoinColumn(name="wf")
+	private Wf wfBean;
+
 	//bi-directional many-to-one association to Pravaxskupinaprav
 	@OneToMany(mappedBy="prava")
 	private List<Pravaxskupinaprav> pravaxskupinapravs;
@@ -40,6 +45,14 @@ public class Prava implements Serializable {
 
 	public void setNazev(String nazev) {
 		this.nazev = nazev;
+	}
+
+	public Wf getWfBean() {
+		return this.wfBean;
+	}
+
+	public void setWfBean(Wf wfBean) {
+		this.wfBean = wfBean;
 	}
 
 	public List<Pravaxskupinaprav> getPravaxskupinapravs() {

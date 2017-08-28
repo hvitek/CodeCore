@@ -1,15 +1,21 @@
 package test;
 
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.Composite;
+
+import composites.WorkflowComposite;
 import model.Prava;
+import model.Wf;
 
 public class PravaWindowMethodsContainer extends PravaWindowDesigner {
 	
-	Prava m_prava = null;
+	Wf m_wf = null;
 	
 	public PravaWindowMethodsContainer (Prava prava) throws Exception{		
 		
-		PravaObject pravaObject = new PravaObject(prava);		
-		this.m_prava = pravaObject.getInstance();
+		super(prava);
+		
+
 		this.updateData(false);
 		holdShell();
 		
@@ -27,12 +33,22 @@ public class PravaWindowMethodsContainer extends PravaWindowDesigner {
 	{
 		if (save){
 			// ulozime data
-			
+			m_prava.setNazev(textZko.getText());
 	    }
 		
 	    // zobrazime data
+		
 		textZko.setText(m_prava.getNazev());
 		
+		
+		
+		
+		
+		
+		
+		PravaObject pravaObject = new PravaObject(m_prava);
+		
+		this.m_prava = pravaObject.getInstance();
 	}
 	   
 	   
@@ -44,5 +60,10 @@ public class PravaWindowMethodsContainer extends PravaWindowDesigner {
 	{
 		// enable
 		// visible
+	}
+	
+	protected void loadWf(Composite parent)
+	{
+		WorkflowComposite.loadStates(new Composite(parent, SWT.NONE),m_prava.getWfBean());
 	}
 }

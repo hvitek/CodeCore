@@ -29,9 +29,8 @@ public class PravaObject{
 	
 	public void save()
 	{
-		//TODO
-//		if(default)
-//			create new
+		if(prava==null)
+			ConnectionBuilder.getConn().persist(prava);
 	}
 	public void reset(){ConnectionBuilder.getConn().find(Prava.class, 1);}
 
