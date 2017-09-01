@@ -21,6 +21,7 @@ public abstract class PravaWindowDesigner {
 	private Composite pnlBody;
 	private Label labelWorkflow;
 	Prava m_prava = null;
+	private Composite pnlButtons;
 	
 	public PravaWindowDesigner(Prava prava){
 		PravaObject pravaObject = new PravaObject(prava);		
@@ -84,16 +85,20 @@ public abstract class PravaWindowDesigner {
 						textZko = new Text(pnlBody, SWT.BORDER);
 						textZko.setBounds(92, 61, 76, 21);
 					}
-					new Label(pnlBody, SWT.NONE);
-					
+					pnlButtons = new Composite(pnlContent,SWT.NONE);
+					pnlButtons.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false,1,1));
+					GridLayout gl_pnlButtons = new GridLayout(1, false);
+					gl_pnlButtons.verticalSpacing = 0;
+					gl_pnlButtons.horizontalSpacing = 0;
+					gl_pnlButtons.marginHeight = 0;
+					gl_pnlButtons.marginWidth = 0;
+					pnlButtons.setLayout(gl_pnlButtons);
+					{
+						this.loadWf(pnlButtons);
+					}
+									
 				}
-				{
-
-					this.loadWf(pnlContent);
-					
-				}
-			
-				
+		
 			}
 	
 protected abstract void loadWf(Composite pnlContent);
